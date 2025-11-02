@@ -39,7 +39,7 @@ const VideoCard = ({ video, videoUrl, onClick, index }: VideoCardProps) => {
   return (
     <div
       ref={cardRef}
-      className={`group relative aspect-video bg-card rounded-lg overflow-hidden border border-border cursor-pointer transition-all duration-500 hover:scale-105 hover:border-primary ${
+      className={`group relative aspect-video bg-card rounded-2xl overflow-hidden border border-border cursor-pointer transition-all duration-500 hover:scale-105 hover:border-primary ${
         isVisible ? "animate-fade-in" : "opacity-0"
       }`}
       style={{ animationDelay: `${index * 100}ms` }}

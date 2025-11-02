@@ -42,7 +42,7 @@ const VideoGrid = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="flex items-center justify-center py-20">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-muted-foreground">Loading videos...</p>
@@ -53,7 +53,7 @@ const VideoGrid = () => {
 
   if (videos.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background px-4">
+      <div className="flex items-center justify-center py-20">
         <div className="text-center">
           <h2 className="text-2xl font-semibold mb-2">No Videos Yet</h2>
           <p className="text-muted-foreground">Check back soon for our latest work</p>
@@ -64,25 +64,21 @@ const VideoGrid = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-background">
-        <div className="container mx-auto px-4 py-16">
-          <header className="text-center mb-16 animate-fade-in">
-            <h1 className="text-6xl font-bold tracking-tight mb-4">REDACTED</h1>
-            <p className="text-xl text-muted-foreground">Visual Stories</p>
-          </header>
+      <header className="text-center mb-16 animate-fade-in">
+        <h1 className="text-6xl font-bold tracking-tight mb-4">Visual Stories</h1>
+        <p className="text-xl text-muted-foreground">Crafting narratives through motion and light</p>
+      </header>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {videos.map((video, index) => (
-              <VideoCard
-                key={video.id}
-                video={video}
-                videoUrl={getVideoUrl(video.file_path)}
-                onClick={() => setSelectedVideo(video)}
-                index={index}
-              />
-            ))}
-          </div>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {videos.map((video, index) => (
+          <VideoCard
+            key={video.id}
+            video={video}
+            videoUrl={getVideoUrl(video.file_path)}
+            onClick={() => setSelectedVideo(video)}
+            index={index}
+          />
+        ))}
       </div>
 
       {selectedVideo && (

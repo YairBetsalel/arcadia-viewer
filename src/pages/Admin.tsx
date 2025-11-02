@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Loader2, Upload, Trash2 } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 interface Video {
   id: string;
@@ -151,8 +152,10 @@ const Admin = () => {
   if (!isAdmin) return null;
 
   return (
-    <div className="min-h-screen bg-background p-8">
-      <div className="max-w-4xl mx-auto space-y-8">
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <div className="container mx-auto px-6 pt-32 pb-20">
+        <div className="max-w-4xl mx-auto space-y-8">
         <div className="flex justify-between items-center">
           <div>
             <h1 className="text-4xl font-bold">REDACTED Admin</h1>
@@ -230,6 +233,7 @@ const Admin = () => {
               ))}
             </div>
           )}
+        </div>
         </div>
       </div>
     </div>
